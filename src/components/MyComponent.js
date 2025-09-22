@@ -1,14 +1,20 @@
-import React from 'react'
+import React from "react";
 
 class MyComponent extends React.Component {
-    render() {
-        return (
-            <div>
-                my first component
-                {Math.random()}
-            </div>
-        );
-    }
+  state = {
+    name: "Hao do",
+    address: "HCM",
+    age: 20,
+  };
+
+  render() {
+    return (
+      <div>
+        My name is {this.state.name}
+        and I'm from {this.state.address}
+      </div>
+    );
+  }
 }
 
 export default MyComponent;
