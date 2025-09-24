@@ -1,4 +1,5 @@
 import React from "react";
+import "./DisplayInfo.scss"
 
 class DisplayInfo extends React.Component {
 
@@ -16,7 +17,7 @@ class DisplayInfo extends React.Component {
     // destructuring array/object
     const { listUsers } = this.props; // object
     return (
-      <div>
+      <div className="display-info-container">
         <div>
             <span onClick={() => {this.handleShowHide()}}>Hide list user</span>
 
@@ -25,7 +26,8 @@ class DisplayInfo extends React.Component {
                 return (
                     <div key={user.id} className=
                     {+user.age > 22 ? "green" : "red"}>
-                    <div>My name's {user.name}</div>
+                    {/* style inline trong jsx */}
+                    <div style={{color: 'blue', paddingTop:"20px"}}>My name's {user.name}</div>
                     <div>My age's {user.age}</div>
                     </div>
                 )            
