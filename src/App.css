@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+body {
+  padding: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
