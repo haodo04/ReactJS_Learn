@@ -16,8 +16,13 @@ class MyComponent extends React.Component {
   };
 
   render() {
+    const test = "Hao do and it faculty";
+    const testObj = { name: "hao do", age: "26" };
+
     return (
       <>
+        {test}
+        <br />
         <div>
           <div className="a">
             <AddUserInfo handleAddNewUser={this.handleAddNewUser} />
