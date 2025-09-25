@@ -4,9 +4,23 @@ import logo from '../logo.svg'
 
 class DisplayInfo extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // babel compiler
+    this.state = {
+      isShowListUser: true
+    }
+    console.log(">>> call me constructor")
+  }
+
   state = {
     isShowListUser: true
   }
+
+  componentDidMount() {
+    console.log(">>> cal me component did mount")
+  }
+
 
   handleShowHide = () => {
     this.setState({
@@ -15,6 +29,7 @@ class DisplayInfo extends React.Component {
   }
 
   render() {
+    console.log(">>> call me render")
     // destructuring array/object
     const { listUsers } = this.props; // object
     return (
