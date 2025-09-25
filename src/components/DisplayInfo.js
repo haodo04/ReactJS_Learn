@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DisplayInfo.scss";
 import logo from "../logo.svg";
 
@@ -42,23 +42,41 @@ import logo from "../logo.svg";
 
 const DisplayInfo = (props) => {
   const { listUsers } = props;
+  const [isShowListUser, setShowHideListUser] = useState(true);
+  // this.state = {
+  //   isShowListUser: true,
+  // };
+  const handleShowHideListUser = () => {
+    // this.setState() {
+    //   isShowListUser: true
+    // }
+    setShowHideListUser(!isShowListUser);
+  };
   return (
     <div className="display-info-container">
-      <div></div>
       <div>
-        {listUsers.map((user, index) => {
-          return (
-            <div key={user.id} className={+user.age > 22 ? "green" : "red"}>
-              <div style={{ color: "blue", paddingTop: "20px" }}>
-                My name's {user.name}
-              </div>
-              <div>My age's {user.age}</div>
-              <button onClick={() => props.handleDeleteUser(user.id)}>
-                Delete
-              </button>
-            </div>
-          );
-        })}
+        <span onClick={() => handleShowHideListUser()}>
+          {isShowListUser === true ? "Hide list user" : "Show list user"}
+        </span>
+      </div>
+      <div>
+        {isShowListUser && (
+          <>
+            {listUsers.map((user, index) => {
+              return (
+                <div key={user.id} className={+user.age > 22 ? "green" : "red"}>
+                  <div style={{ color: "blue", paddingTop: "20px" }}>
+                    My name's {user.name}
+                  </div>
+                  <div>My age's {user.age}</div>
+                  <button onClick={() => props.handleDeleteUser(user.id)}>
+                    Delete
+                  </button>
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
     </div>
   );
