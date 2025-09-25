@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./DisplayInfo.scss";
 import logo from "../logo.svg";
 
@@ -43,15 +43,17 @@ import logo from "../logo.svg";
 const DisplayInfo = (props) => {
   const { listUsers } = props;
   const [isShowListUser, setShowHideListUser] = useState(true);
-  // this.state = {
-  //   isShowListUser: true,
-  // };
   const handleShowHideListUser = () => {
-    // this.setState() {
-    //   isShowListUser: true
-    // }
     setShowHideListUser(!isShowListUser);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.title = "Hao do ne";
+    }, 3000);
+    console.log(">>> call me useEffect");
+  });
+
   return (
     <div className="display-info-container">
       <div>
