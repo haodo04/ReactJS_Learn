@@ -19,7 +19,7 @@ class DisplayInfo extends React.Component {
     const { listUsers } = this.props; // object
     return (
       <div className="display-info-container">
-        <img src={logo}/>
+        {/* <img src={logo}/> */}
         <div>
             <span onClick={() => {this.handleShowHide()}}>Hide list user</span>
 
@@ -31,6 +31,7 @@ class DisplayInfo extends React.Component {
                     {/* style inline trong jsx */}
                     <div style={{color: 'blue', paddingTop:"20px"}}>My name's {user.name}</div>
                     <div>My age's {user.age}</div>
+                    <button onClick={() => this.props.handleDeleteUser(user.id)}>Delete</button>
                     </div>
                 )            
         })}
