@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
 import "./App.scss";
-import MyComponent from "./components/MyComponent";
 import React from "react";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div className="app-container">
-      hello world
+      <Header/>
     </div>
   );
 }
